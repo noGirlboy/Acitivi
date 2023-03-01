@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: 123456
+
+
+mybatis-plus:
+  global-config:
+    db-config:
+      #逻辑未删除值，（逻辑删除下有效）
+      logic-delete-value: 1
+      #逻辑未删除值，（逻辑删除下有效）需要注入逻辑策略LogicSqlInjector，以@Bean方式注      入
+      logic-not-delete-value: 0
+  #配置扫描xml
+  mapper-locations:
+    # *.xml的具体路径
+    - classpath*:/com/*/mapper/*.xml
+  #别名包扫描路径，通过该属性可以给包中的类注册别名，多个package用逗号或者分号分隔
+  type-aliases-package: com.zq.acitivi.entity
